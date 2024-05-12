@@ -17,21 +17,53 @@ Dalam repo ini, mengimplementasikan OAuth atau autentikasi menggunakan layanan d
 
 ### Langkah 1:
 
-Pastikan sudah membuat layanan Supabase Project atau buat menggunakan link ini:
+<div align="center">
+    <img src="https://github.com/panntod/Learn-Express-Prisma/blob/master/assets/preview.png?raw=true" alt="Image's Create Project" style="display: block; margin-left: auto; margin-right: auto;">
+</div>
 
-[Supabase](https://supabase.com/dashboard/new/).
+Pastikan sudah membuat layanan Supabase Project atau buat menggunakan [Supabase](https://supabase.com/dashboard/new/).
 
 ### Langkah 2:
 
-Pastikan sudah membuat layanan Oauth yang akan digunakan, disini saya menggunakan `discord`, Aktifkan layanan pada `Authentication` lalu pergi ke `Providers`, copy call back url untuk diberikan pada `discord`
+<div align="center">
+    <img src="https://github.com/panntod/Learn-Express-Prisma/blob/master/assets/preview.png?raw=true" alt="Image's Config Project" style="display: block; margin-left: auto; margin-right: auto;">
+</div>
+
+Jangan lupa untuk menseting konfigurasi redirect url pada supabase.
 
 ### Langkah 3:
 
-Pastikan sudah menyalakan `discord developer`, lalu anda dapat menuju ke [Discord Developer Panel](https://discord.com/developers/applications), Lalu buat aplikasi baru, setelah anda memberi nama pergilah ke `Oauth`, Copy `client id` dan buat ulang `client secret` lalu copy. Setelah itu paste url redirect nya berisikan url yang didapatkan dilangkah sebelum nya.
+<div align="center">
+    <img src="https://github.com/panntod/Learn-Express-Prisma/blob/master/assets/preview.png?raw=true" alt="Image's Provider" style="display: block; margin-left: auto; margin-right: auto;">
+</div>
+
+Pastikan sudah menyalakan layanan Oauth yang akan digunakan, disini saya menggunakan `discord`, Aktifkan layanan pada `Authentication` lalu pergi ke `Providers`, copy call back url untuk diberikan pada `discord`
 
 ### Langkah 4:
 
-Kembali pada `Supabase Providers` atau yang dilangkah 2, isi client id dan juga secret sesuai dengan yang didapatkan di langkah 4. Click Save.
+<div align="center">
+    <img src="https://github.com/panntod/Learn-Express-Prisma/blob/master/assets/preview.png?raw=true" alt="Image's Create Discord" style="display: block; margin-left: auto; margin-right: auto;">
+</div>
+
+Pastikan sudah menyalakan `discord developer`, lalu anda dapat menuju ke [Discord Developer Panel](https://discord.com/developers/applications), Lalu buat aplikasi baru.
+
+### Langkah 5:
+
+<div align="center">
+    <img src="https://github.com/panntod/Learn-Express-Prisma/blob/master/assets/preview.png?raw=true" alt="Image's Discord Dashboard" style="display: block; margin-left: auto; margin-right: auto;">
+</div>
+
+Setelah itu akan muncul tampilan dashboard, pergi ke bagian `Oauth`.
+
+## Langkah 6:
+
+<div align="center">
+    <img src="https://github.com/panntod/Learn-Express-Prisma/blob/master/assets/preview.png?raw=true" alt="Image's Discord Dashboard" style="display: block; margin-left: auto; margin-right: auto;">
+</div>
+
+Copy `client id` dan buat ulang `client secret` lalu copy. Setelah itu paste url redirect nya berisikan url yang didapatkan dilangkah sebelum nya.
+
+Kembali pada `Supabase Providers` atau yang `Langkah 3`, isi client id dan juga secret sesuai dengan yang didapatkan di `Langkah 6`. Click Save.
 
 ### Atau
 
@@ -56,6 +88,10 @@ Setelah itu instalasi dependensi, dengan menjalankan:
 ```bash
 npm install
 ```
+
+<div align="center">
+    <img src="https://github.com/panntod/Learn-Express-Prisma/blob/master/assets/preview.png?raw=true" alt="Image's Api" style="display: block; margin-left: auto; margin-right: auto;">
+</div>
 
 Setelah itu, ganti `.env.example` menjadi `.env`, dan isi dengan code yang kalian dapatkan dari `Supabase Project Api`
 
