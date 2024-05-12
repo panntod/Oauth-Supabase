@@ -1,78 +1,65 @@
-# Vite + React Starter Template🚀
+# OAuth Supabase 🌐
 
 ## Deskripsi
 
-Dalam repository ini berisikan sebuah starter template untuk [Vite](https://vitejs.dev) dan [React](https://react.dev) yang biasa saya gunakan, bersifat open-source dan dapat dirubah sesuai dengan kebutuhan kalian. Termasuk banyak alat dan pustaka yang berguna yang menerapkan praktik terbaik dan perbaikan otomatis saat disimpan.
+Dalam repo ini, mengimplementasikan OAuth atau autentikasi menggunakan layanan dari Supabase. Berisikan implementasi singkat dari code pembuatan loginpage, dan dashboard.
 
-## What's New?
+## Dependencies
 
-Dalam repository ini memiliki beberapa configurasi yang sudah disesuaikan dengan kebutuhan, seperti:
+- @supabase/auth-ui-react ✨
+- @supabase/auth-ui-shared 🌐
+- @supabase/supabase-js 📊
+- Tailwind 🎨
+- Vite 🛠️
+- React ⚙️
 
-- Menerapkan eslint bersama dengan pustaka nya untuk menerapkan praktik terbaik
-- Konfigurasi vite:
-  - aplikasi akan berjalan konsisten di port 3000 (anda bisa merubah nya di `vite.config.json`)
-  - memungkinkan untuk mengimport dengan menggunakan alias
-- Konfigurasi vscode:
-  - otomatis akan menginstall extensions yang dibutuhkan
-  - otomatis memformat dan lint ketika file disimpan
-- Konfigurasi Javascript:
-  - menerapkan path utama yaitu di `root` directory
-  - memberitahu file javascript untuk menerapkan path `@/` sama dengan `src/*`
-- Menerapkan tailwindcss memungkinkan untuk membuat web yang modern
+## Set Up Supabase
 
-## Library
+### Langkah 1:
 
-- Vite: Memberikan path alias `@/` untuk memanggil element yang berada di `./src`.
-- React-router-dom: Perutean Deklaratif Router untuk React js.
-- ESLint: Menemukan dan memperbaiki masalah dalam kode JavaScript dengan tambahan plugin.
-- TailwindCSS: Membuat situs web modern dengan cepat tanpa harus meninggalkan HTML Anda.
-- Prettier: Pemformat kode yang konsisten.
+Pastikan sudah membuat layanan Supabase Project atau buat menggunakan link ini:
 
-## Cara Memakai Aplikasi
+[Supabase](https://supabase.com/dashboard/new/).
 
-Untuk mendapatkan code ini diversi local atau computer kalian bisa mengikuti langkah langkah sederhana ini:
+### Langkah 2:
 
-### Langkah 1
+Pastikan sudah membuat layanan Oauth yang akan digunakan, disini saya menggunakan `discord`, Aktifkan layanan pada `Authentication` lalu pergi ke `Providers`, copy call back url untuk diberikan pada `discord`
 
-Kalian bisa mengclick di bagian pojok kanan atas yang bertuliskan `use this template`
+### Langkah 3:
 
-### Langkah 2
+Pastikan sudah menyalakan `discord developer`, lalu anda dapat menuju ke [Discord Developer Panel](https://discord.com/developers/applications), Lalu buat aplikasi baru, setelah anda memberi nama pergilah ke `Oauth`, Copy `client id` dan buat ulang `client secret` lalu copy. Setelah itu paste url redirect nya berisikan url yang didapatkan dilangkah sebelum nya.
 
-Setelah itu kalian akan diarahkan untuk membuat repository baru, beri nama repository sesuai dengan kebutuhan kalian
+### Langkah 4:
 
-### Langkah 3
+Kembali pada `Supabase Providers` atau yang dilangkah 2, isi client id dan juga secret sesuai dengan yang didapatkan di langkah 4. Click Save.
 
-Kalian sudah berhasil membuat repository di github. Sekarang kalian bisa meng-clone atau mendownloadnya
+### Atau
 
-## Scripts
+Anda bisa melihat tutorial selengkapnya di [Cooper Code](https://www.youtube.com/watch?v=H1V716XPUEs)
 
-### Start Dev
+## Instalasi Project
 
-`npm run dev` atau `pnpm run dev` atau `yarn run dev` dan buka pada browser pada `http://localhost:3000`
+Jalankan perintah:
 
-### Build dan Production
+```bash
+git clone https://github.com/panntod/Oauth-Supabase.git
+```
 
-`npm run build` atau `pnpm run build` atau `yarn run build`
+Setelah itu masuk ke direktori, dengan menjalankan:
 
-### Locally Preview Production atau Build
+```bash
+cd Oauth-Supabase
+```
 
-`npm start` atau `yarn start` dan buka pada browser pada `http://localhost:3000`
+Setelah itu instalasi dependensi, dengan menjalankan:
 
-### Lint Untuk Melihat Kesalahan
+```bash
+npm install
+```
 
-`npm run lint` atau `yarn run lint` atau `pnpm run lint`
+Setelah itu, ganti `.env.example` menjadi `.env`, dan isi dengan code yang kalian dapatkan dari `Supabase Project Api`
 
-### Lint Untuk Memperbaiki Kesalahan
-
-`npm run lint:fix` atau `yarn run lint:fix` atau `pnpm run lint:fix`
-
-## Tunjukan Support Kalian
-
-- Dengan cara memberi ⭐ jika kamu menyukai project ini
-- Dengan cara berkontribusi pada project ini untuk meningkatkan kualitas code
-
-# Social Media
-
-Tetap terhubung dengan saya melalui follow sosmed [Pandhu Arya](https://panntod.github.io/Project-Mandiri/linktree)
-
-> Happy Hacking 🤖
+```env
+VITE_API_URL=<Ganti Dengan Url Supabase>
+VITE_API_KEY=<Ganti Dengan Anon Public Key>
+```
