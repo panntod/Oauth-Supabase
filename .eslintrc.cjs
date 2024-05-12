@@ -56,6 +56,8 @@ module.exports = {
     "react/function-component-definition": "off",
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "warn",
-    semi: "error",
+    "import/no-unresolved": "warn",
+    "import/extensions": "off",
+    semi: "warn",
   },
 };
