@@ -12,8 +12,11 @@ const Dashboard = () => {
     async function handleUserData() {
       await supabase.auth.getUser().then((value) => {
         // Check Data
-        if (value.data?.user) setUser(value.data.user);
-        else navigate("/");
+        if (value.data?.user) {
+          setUser(value.data.user);
+        } else {
+          navigate("/");
+        }
       });
     }
 
@@ -28,6 +31,7 @@ const Dashboard = () => {
   }
 
   const userData = user.user_metadata;
+
   return (
     <>
       <nav className="bg-gray-800 py-4 px-24 fixed w-full">
@@ -42,11 +46,40 @@ const Dashboard = () => {
           </button>
         </div>
       </nav>
-
       <main>
-        <h1 className="text-white font-bold text-4xl">
-          Hello {userData?.full_name}
-        </h1>
+        {/* <!-- Card start --> */}
+        <div className="max-w-sm bg-gray-800 rounded-lg p-12 overflow-hidden shadow-md shadow-gray-600">
+          <div className="text-center my-4">
+            {userData?.picture ? (
+              <img
+                className="h-32 w-32 rounded-full mx-auto my-4"
+                src={userData?.picture}
+                alt={userData?.name}
+              />
+            ) : (
+              <div className="h-32 w-32 rounded-full flex justify-center items-center bg-yellow-300 mx-auto my-4">
+                <h1 className="text-6xl font-bold">
+                  {userData?.email.charAt(0)}
+                </h1>
+              </div>
+            )}
+
+            <div className="py-2">
+              <h3 className="font-bold text-2xl text-gray-800 dark:text-white mb-1">
+                {userData?.custom_claims
+                  ? `${userData?.custom_claims?.global_name}  (${userData?.name})`
+                  : userData?.email.split(".")[0]}
+              </h3>
+              <div className="text-gray-700 dark:text-gray-300 items-center">
+                {userData?.full_name}
+              </div>
+              <div className="text-gray-700 dark:text-gray-300 items-center">
+                {userData?.email}
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* <!-- Card end --> */}
       </main>
     </>
   );
